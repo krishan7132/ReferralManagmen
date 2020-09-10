@@ -43,7 +43,6 @@ namespace ReferralManagment.Plugins
                          _planstartingdateTimeUTC = _treatmentPlan.GetAttributeValue<DateTime>("clrcomp_startdateandtime");
                          _planstartingdateTimeLocal= RetrieveLocalTimeFromUTCTime(_service, _planstartingdateTimeUTC, _userTimeZoneCode);
                         var _createAppointment = _treatmentPlan.GetAttributeValue<OptionSetValue>("clrcomp_createappointment").Value;
-                        string[] daysofweek = new string[6];
                         OptionSetValueCollection days = _treatmentPlan.GetAttributeValue<OptionSetValueCollection>("clrcomp_daysofweek");
 
                         for (int i = 0; i < days.Count; i++)
