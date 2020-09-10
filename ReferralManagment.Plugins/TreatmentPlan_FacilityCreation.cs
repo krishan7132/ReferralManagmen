@@ -144,6 +144,8 @@ namespace ReferralManagment.Plugins
                                 Entity _nearestFacility = new Entity("clrcomp_nearestfaciltiies");
                                 _nearestFacility.Attributes["clrcomp_distanceinmiles"] = List.distance;
                                 _nearestFacility.Attributes["clrcomp_name"] = _account.GetAttributeValue<string>("name");
+                                _nearestFacility.Attributes["clrcomp_latitude"] = _account.GetAttributeValue<double>("address1_latitude");
+                                _nearestFacility.Attributes["clrcomp_longitude"] = _account.GetAttributeValue<double>("address1_longitude");
                                 _nearestFacility.Attributes["clrcomp_treatmentplan"] = new EntityReference("clrcomp_treatmentplan", _treatmentPlan.Id);
                                 _nearestFacility.Attributes["clrcomp_facility"] = new EntityReference("account", List.accid);
                                 Guid _nearestFacilityId = service.Create(_nearestFacility);
